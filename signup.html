@@ -1,0 +1,178 @@
+<html>
+<head>
+	<title>Registration</title>
+	<link rel="shortcut icon" type="image/x-icon" href="images/plus.jpg" />
+	<link rel="stylesheet" href="loader.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/b379d3e204.js" crossorigin="anonymous"></script>
+<style>
+*{
+	margin:0;
+	padding:0;
+	font-family: sans-serif;
+ }	
+
+.menu{
+	background-color:#009879;
+	height:1000px;
+    width:100%;
+	position: absolute;
+}
+.formbox{
+	font-family: sans-serif;
+	height: 620px;
+	width: 430px;
+	position: relative;
+	margin: 6% auto;
+	background: #fff;
+	padding: 5px;
+	
+	border-radius: 20px;
+	box-shadow: 0 0 20px 9px #ff61241f;
+}
+
+.input-group{
+	top:180px;
+	position: absolute;
+	width: 280px;
+	transition: .5s;
+}
+.input-field{
+	width: 100%;
+	padding: 10px 0;
+	margin: 5px 0;
+	border-left: 0;
+	border-top:0;
+	border-right: 0;
+	border-bottom: 1px solid #999;
+	outline: none; 
+	background: transparent;
+}
+.submit-btn{
+	width: 85%;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin:auto;
+	background: linear-gradient(to right,#009879,#32CD32);
+	border: 0;
+	outline: none;
+	border-radius: 30px;
+}
+#register1{
+	left: 50px;
+}
+.eye{
+    position: absolute;	
+	margin-top: 10px;
+}
+#hide1{
+	display: none;
+}
+#hide3{
+    display:none;
+}
+	h1{
+		font-family: sans-serif;
+		color:#009FFD;
+	}
+	.float-right{
+		color: #fff;
+		font-size: 15px;
+		text-decoration: none;
+	}
+	
+	  .link{
+		background-color:#009879;
+		width:1290px;
+		height:40px;
+	}
+	.avatar{
+		width:200px;
+		height:200px;
+		border-radius:50%;
+		position:absolute;
+		top:-50px;
+		left:170px;
+	}
+	
+    </style>
+</head>
+	<body>
+	<div class="loader">
+	  <img src="gif/loader.gif" alt="Loading...." />
+	</div>
+	<script src="load.js">
+	</script>
+	<div class="menu">
+	<div class="link">
+		<a class="float-right" href="home.html" style="font-size:20px;"><h4><i class="fa fa-home" aria-hidden="true">HOME</i></h4></a>
+		</div> 
+	<div class="formbox">
+	
+	        <center><img src="images/login.jpg" class="avatar" style="width:100px;height:100px;"></center><br><br><br>
+			<center><h1 style="color:#009879;"> PATIENT<br> REGISTRATION</h1></center>
+		
+		<form action="patregistration.php" name="myform" method="post" id="register1" class="input-group" autocomplete="off">
+		
+		<input type="text" name="fullname" class="input-field" placeholder="Full Name" required>
+		<input type="text" name="userid" class="input-field" placeholder="User Id" required>
+		<input type="email" name="email" class="input-field" placeholder="Email Id" required>
+		<input type="number" name="phoneno" class="input-field" placeholder="Phone Number" required>
+		
+		
+		<span class="eye" onclick="myFunction()">
+		<i id="hide1"class="fa fa-eye" style="margin-left: 270px; color:#009879;margin-bottom: auto;"></i>
+		<i id="hide2"class="fa fa-eye-slash" style="margin-left: 270px;color:#009879; margin-bottom: auto;"></i>
+		</span>
+		<input type="password" name="password" class="input-field" id="myinput" placeholder="Enter Password" >
+		<span class="eye" onclick="myFunction2()">
+		<i id="hide3"class="fa fa-eye" style="margin-left: 270px; color:#009879;margin-bottom: auto;"></i>
+		<i id="hide4"class="fa fa-eye-slash" style="margin-left: 270px;color:#009879; margin-bottom: auto;"></i>
+		</span>
+		<input type="password" name="cpassword" class="input-field" id="myinput2" placeholder="Confirm Password" required>
+		<select name="gender"  class="input-field"  onchange="myFunction()" required>
+				        <option value="" disabled selected>--Select Gender--</option>
+				        <option value="Male">Male</option>
+				        <option value="Female">Female</option>
+				        <option value="Others">Others</option>
+				   </select><br><br>
+		<a href="signin.php" id="up" style="text-decoration:none; font-family: sans-serif;color:#ff568c;">Already have an account?</a>
+		<br><br><center><button type="submit" class="submit-btn" onclick="validate()" style="margin-left:40px;">Patient Register</button></center>
+		</form>
+		</div>
+		</div>
+		<script>
+	function myFunction(){
+		var x = document.getElementById("myinput");
+		var y = document.getElementById("hide1");
+		var z = document.getElementById("hide2");
+		if(x.type === 'password'){
+			x.type = "text";
+			y.style.display="block";
+			z.style.display="none";
+		}
+		else{
+			x.type = "password";
+			y.style.display="none";
+			z.style.display="block";
+		}
+	}
+	function myFunction2(){
+		var a1 = document.getElementById("myinput2");
+		var b2 = document.getElementById("hide3");
+		var c3 = document.getElementById("hide4");
+		if(a1.type === 'password'){
+			a1.type = "text";
+			b2.style.display="block";
+			c3.style.display="none";
+		}
+		else{
+			a1.type = "password";
+			b2.style.display="none";
+			c3.style.display="block";
+		}
+	}
+	</script>
+	</body>
+</html>

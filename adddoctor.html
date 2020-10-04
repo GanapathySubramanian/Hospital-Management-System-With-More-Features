@@ -1,0 +1,206 @@
+<html>
+<head>
+	<title>Registration</title>
+	<link rel="shortcut icon" type="image/x-icon" href="images/plus.jpg" />
+	<link rel="stylesheet" href="loader.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/b379d3e204.js" crossorigin="anonymous"></script>
+<style>
+*{
+	margin:0;
+	padding:0;
+	font-family: sans-serif;
+ }	
+.menu{
+	height:1000px;
+    width:100%;
+	background:#009879;
+	background-position:bottom;
+	background-size:cover;
+	position: absolute;
+}
+.formbox{
+	font-family: sans-serif;
+	height: 680px;
+	width: 430px;
+	position: relative;
+	margin: 6% auto;
+	background: #fff;
+	padding: 5px;
+	border-radius: 20px;
+	box-shadow: 0 0 20px 9px #ff61241f;
+}
+
+.input-group{
+	top:150px;
+	position: absolute;
+	width: 280px;
+	transition: .5s;
+}
+.input-field{
+	width: 100%;
+	padding: 14px 0;
+	margin: 5px 0;
+	border-left: 0;
+	border-top:0;
+	border-right: 0;
+	border-bottom: 1px solid #999;
+	outline: none; 
+	background: transparent;
+	
+}
+.submit-btn{
+	width: 85%;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin:auto;
+	background: linear-gradient(to right,#009879,#32CD32);
+	border: 0;
+	outline: none;
+	border-radius: 30px;
+}
+#register1{
+	left: 60px;
+}
+
+	h1{
+		font-family: sans-serif;
+		color:#009FFD;
+	}
+	.float-right{
+		color: #fff;
+		font-size: 15px;
+		text-decoration: none;
+	}
+	 
+	  .eye{
+    position: absolute;	
+	margin-top: 10px;
+}
+#hide1{
+	display: none;
+}
+#hide3{
+	display:none;
+}
+.avatar{
+		width:130px;
+		height:130px;
+		border-radius:50%;
+		position:absolute;
+		top:-50px;
+		left:150px;
+	}
+    </style>
+</head>
+	<body>
+	<div class="loader">
+	  <img src="gif/loader.gif" alt="Loading...." />
+	</div>
+	<script src="load.js">
+	</script>
+	<div class="menu">
+		 <div class="link">
+    <a class="float-right" href="adminsignin.html" style="font-size:20px;color:white;text-decoration:none;font-family:sofia;"><h4><i class="fa fa-backward" aria-hidden="true"> Back</i> </h4></a>
+    </div>
+		<div class="formbox">
+		    <center><img src="images/book.png" class="avatar"></center><br><br><br><br>
+			<center><h1 style="color:#009879">ADD DOCTORS</h1></center>
+		
+		<form action="docregistration.php" method="post" id="register1" class="input-group" autocomplete="off">
+
+            <input type="text" name="doctorid" class="input-field" placeholder="Enter Doctor's User Id" required>
+            <input type="text" name="doctorname" class="input-field" placeholder="Enter Doctor's Full Name" required>
+
+		      <select name="spec" class="input-field" id="spec" onchange="myFunction()">
+				        <option value="" disabled selected>--Select Specialization--</option>
+				        <option value="Dermatology">Dermatology</option>
+				        <option value="Orthopedic">Orthopedic</option>
+				        <option value="Neurology">Neurology</option>
+				        <option value="Physiotheraphy">Physiotheraphy</option>
+				        <option value="Cardiology">Cardiology</option>
+				        <option value="Emergency">Emergency</option>
+				   </select><br>
+				    <script>
+    				function myFunction() {
+                        var x = document.getElementById("spec");
+						var display=x.options[x.selectedIndex].value;
+                        switch(display)
+                       {
+                            case 'Dermatology':
+							    document.getElementById("fees").value='Rs 1000/-'; 
+							    break ;
+                            case 'Orthopedic':
+							    document.getElementById('fees').value='Rs 1200/-';
+								break;
+                            case 'Neurology':
+							    document.getElementById('fees').value='Rs 1500/-';
+								break;
+                            case 'Physiotheraphy':
+							     document.getElementById('fees').value='Rs 2000/-';
+							     break;
+                            case 'Cardiology':
+							     document.getElementById('fees').value='Rs 2000/-';
+								 break;
+                            case 'Emergency':
+							     document.getElementById('fees').value='Rs 500/-';
+								 break;
+                        }
+        
+                        }
+       
+                  
+				  </script>
+       		<span class="eye" onclick="myFunction1()">
+		<i id="hide1"class="fa fa-eye" style="margin-left: 270px;color:#009879; margin-bottom: auto;"></i>
+		<i id="hide2"class="fa fa-eye-slash" style="margin-left: 270px; color:#009879;margin-bottom: auto;"></i>
+		</span>
+		<input type="password" name="password" class="input-field" id="myinput1" placeholder="Enter Password" ><br><br>
+		
+		<span class="eye" onclick="myFunction2()">
+		<i id="hide3"class="fa fa-eye" style="margin-left: 270px; color:#009879;margin-bottom: auto;"></i>
+		<i id="hide4"class="fa fa-eye-slash" style="margin-left: 270px;color:#009879; margin-bottom: auto;"></i>
+		</span>
+		<input type="password" name="cpassword" class="input-field" id="myinput2" placeholder="Confirm Password" >
+				   <p style="font-family:sans-serif;font-size:12px;">Fees</p>
+				    <input class="input-field" id="fees" name="fees"  value="" type="text" readonly><br><br>
+					
+			<br><center><button type="submit" name="submit" class="submit-btn">ADDDOCTOR</button></center>
+		</form>
+		</div>
+		</div>
+				<script>
+	function myFunction1(){
+		var a = document.getElementById("myinput1");
+		var b = document.getElementById("hide1");
+		var c = document.getElementById("hide2");
+		if(a.type === 'password'){
+			a.type = "text";
+			b.style.display="block";
+			c.style.display="none";
+		}
+		else{
+			a.type = "password";
+			b.style.display="none";
+			c.style.display="block";
+		}
+	}
+		function myFunction2(){
+		var a1 = document.getElementById("myinput2");
+		var b2 = document.getElementById("hide3");
+		var c3 = document.getElementById("hide4");
+		if(a1.type === 'password'){
+			a1.type = "text";
+			b2.style.display="block";
+			c3.style.display="none";
+		}
+		else{
+			a1.type = "password";
+			b2.style.display="none";
+			c3.style.display="block";
+		}
+	}
+	</script>
+	</body>
+</html>

@@ -1,0 +1,637 @@
+<html>
+<head>
+	<title>Home</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnJs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="images/plus.jpg" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/b379d3e204.js" crossorigin="anonymous"></script>
+	
+	<style>
+	body
+	{
+		margin:0;
+		padding:0;
+		font-family:sofia;
+	    background-color:#009879;
+		background-attachment: fixed;
+	}
+	::-webkit-scrollbar{
+		width:15px;
+	}
+	::-webkit-scrollbar-track{
+		border:1px solid #009879;
+		box-shadow:inset 0 0 2.5px 2px rgba(0,0,0,1.25px);
+	}
+	::-webkit-scrollbar-thumb{
+		background:#fff;
+		border-radius:30px;
+	}
+	.loader{
+	       position:fixed;
+		   z-index:99;
+		   top:0;
+		   left:0;
+		   width:100%;
+		   height:100%;
+		   background:black;
+		   display:flex;
+		   justify-content:center;
+		   align-items:center;
+	  }
+	  .loader > img{
+	       width:30%;
+	  }
+	  .loader.hidden{
+            animation:fadeout 1s;
+            animation-fill-mode:forwards;			
+	  }
+	  @keyframes fadeout{
+		  100%{
+		      opacity:0;
+			  visibility:hidden;
+		  }
+	  }
+	
+	header
+		{
+			position: relative;
+			max-width: 1250px;
+			margin: 20px auto;
+			padding:10px;
+			background: #fff;
+			box-sizing: border-box;
+			border-radius: 4px;
+			box-shadow: 0 28px 5px rgba(0,0,0,.2);
+		}
+	.logo{
+		color:#009879;
+		height:60px;
+		font-size: 36px;
+		line-height: 60px;
+		padding: 0 20px;
+		text-align: center;
+		box-sizing: border-box;
+		float:left;
+        font-weight: 700;
+		text-decoration: none;
+		}
+		nav
+		{
+			float:right;
+		}
+		.clearfix
+		{
+			clear: both;
+		}
+		nav ul{
+			margin: 0;
+			padding: 0;
+			display: flex;
+		}
+		nav ul li{
+			list-style: none;
+		}
+		nav ul li a{
+			display: block;
+			margin: 10px 0;
+			padding: 10px 20px;
+			text-decoration: none;
+			color: #009879;
+		}
+		nav ul li a.active,nav ul li a:hover{
+			background:#009879;
+			color: #fff;
+			transition: 0.5s;
+		}
+		@media(max-width:768px)
+		{
+			.menu-toggle
+			{
+				display: block;
+				width: 40px;
+				height: 40px;
+				margin: 20px;
+				background: #ccc;
+				float: right;
+				cursor: pointer;
+				text-align: center;
+				font-size: 30px;
+				color: #009FFD;
+			}
+			.menu-toggle:before
+			{
+				content: '\f0c9';
+				font-family: fontAwesome;
+				line-height: 40px;				
+			}
+			.menu-toggle.active:before
+			{
+				content: '\f00d';
+				font-family: fontAwesome;
+				line-height: 40px;				
+			}
+			nav
+			{
+				display: none;
+			}
+			nav.active
+			{
+				display: block;
+				width: 100%;
+			}
+			nav.active ul
+			{
+				display: block;
+			}
+			nav.active ul li
+			{
+				margin: 0;
+			}
+		}
+		.dropdown {
+               float: left;
+               overflow: hidden;
+            }
+
+        .dropdown .dropbtn {
+               font-size: 15px;  
+               border: none;
+               outline: none;
+               color: #009879;
+               padding: 14px 16px;
+               background-color: inherit;
+               font-family: sans-serif;
+               margin: 0;
+            }
+
+         .dropdown:hover .dropbtn {
+               background:#009879;
+			   color: #fff;
+			   transition: 0.5s;
+             }
+
+         .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: #f9f9f9;
+              min-width: 160px;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              z-index: 1;
+            }
+
+        .dropdown-content a {
+             float: none;
+             color: #009879;
+             padding: 12px 16px;
+             text-decoration: none;
+             display: block;
+             text-align: left;
+            }
+
+        .dropdown-content a:hover {
+            background:#009879;
+			color: #fff;
+			transition: 0.5s;
+          }
+
+        .dropdown:hover .dropdown-content {
+             display: block;
+          }
+	   
+		.pulse{
+		     height:100px;
+			 width:200px;
+			 overflow:hidden;
+			 position:absolute;
+		}
+		.pulse:after{
+			display:block;
+			content:'';
+			background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200px 100px" enable-background="new 0 0 200px 100px" xml:space="preserve"><polyline fill="none" stroke-width="3px" stroke="white" points="2.4,58.7 70.8,58.7 76.1,46.2 81.1,58.7 89.9,58.7 93.8,66.5 102.8,22.7 110.6,78.7 115.3,58.7 126.4,58.7 134.4,54.7 142.4,58.7 197.8,58.7"/></svg>'); 0 0 no-repeat;
+            width:100%;
+			height:100%;
+			position:absolute;
+			animation:2s pulse linear infinite;
+			clip: rect(0, 0, 100px, 0);
+		}
+		.pulse:before{
+			content:'';
+			position:absolute;
+			z-index:-1;
+			left:2px;
+			right:2px;
+			bottom:0;
+			top:16px;
+			margin:auto;
+			height:3px;
+		}
+		@keyframes pulse{
+		    0%{
+				clip: rect(0, 0, 100px, 0);
+			}
+            4%{
+				clip: rect(0, 66.66667px, 100px, 0);
+			}
+            15%{
+				clip: rect(0, 133.33333px, 100px, 0);
+			}
+			20%{
+				clip: rect(0, 300px, 100px, 0);
+				opacity:1;
+			}			
+		}
+	   
+	    #pulse{
+		   background-image:url("images/img2.jpg");
+		   background-repeat:no-repeat;
+		   width:100%;
+		   height:100%;
+	    }
+	   .about{
+	       background-image:url("images/mt-0012-about-img10.jpg");
+	       background-repeat:no-repeat;
+	       background-position:left;
+	    }
+	    .wordings{
+		    margin-left:600px;  
+		    font-family:sans-serif;
+	    }
+	    #row {
+            display: flex;
+        }
+        #col{
+           flex: 33.33%;
+           padding: 25px;
+        }
+	    .social{
+		    display: flex;
+	    }
+	    .media{
+	       flex: 10%;
+           padding: 5px;
+	    }
+	    
+	    .btn{
+		  
+  	border-radius: 30px;
+	position: absolute;
+	cursor: pointer;
+	background: #009879;
+	color:#fff;
+	border: none;
+	max-width: 150px;
+	padding: 12px;
+		
+	    }
+	    .btn:hover{
+		    background-color:#ff568c;
+		    color:white;
+		}
+		.list{
+			color:white;
+		}
+		#link{
+			text-decoration:none;
+			color:white;
+		}
+	
+	<!--5th division-->
+
+        #container{
+	        width:100px;
+	        height:100vh;
+	        background-color:green;
+	        display:flex;
+			items-align:center;
+         	
+        }
+        .box{
+			font-family: sans-serif;
+	        position: relative;
+	        margin: 6% auto;
+	        padding: 5px;
+	        border-radius: 20px;
+            width:250px;
+            height:250px;
+            background-color:#d3d3d3;
+            box-shadow:2px 10px 12px rgba(0,0,0,0.5);
+        }
+		.row {
+            display: flex;
+        }
+        .column{
+            flex: 33.33%;
+            padding: 25px;
+		}
+		
+	</style>
+	</head>
+	<body>
+	    <div class="loader">
+	        <img src="gif/loader.gif" alt="Loading...." />
+	    </div>
+	    <script src="load.js">
+	       
+	    </script>
+	
+	
+	
+	
+	<!--FIRST DIVISION-->
+	    <div id="firstdivision">
+	        <header>
+		        <a href="#" class="logo">WE CARE HOSPITAL</a>
+		            <div class="menu-toggle"></div>
+		                <nav>
+			                <ul>
+			                <li><a href="admin.html">ADMIN</a></li>
+			                <li><a href="signup.html">SIGN UP</a></li>
+			                <li><a href="signin.html">SIGN IN</a></li>
+			                <li><a href="contactus.html">CONTACT US</a></li>
+			                <li><a href="aboutus.html">ABOUT US</a></li>
+	                         <li><a href="gallery.html">GALLERY</a></li>
+			                <li>
+							    <div class="dropdown">
+                                    <button class="dropbtn">DEPARTMENT <i class="fa fa-caret-down"></i></button>
+                                    <div class="dropdown-content">
+                                        <a href="d1.html">Dept-Dermatology</a>
+                                        <a href="d2.html">Dept-Orthopedic</a>
+                                        <a href="d3.html">Dept-Neurology</a>
+                                        <a href="d4.html">Dept-Physiotheraphy</a>
+                                        <a href="d5.html">Dept-Cardiology</a>
+                                        <a href="d6.html">Dept-Emergency</a>
+                                    </div>
+							    </div> 
+							</li>
+
+						    </ul>
+		                </nav>
+		                <div class="clearfix"></div>
+	        </header>
+	        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	        <script type="text/javascript">
+           	$(document).ready(function(){
+		        $('.menu-toggle').click(function(){
+			        $('.menu-toggle').toggleClass('active')
+			            $('nav').toggleClass('active')
+		        })
+          	})	
+	        </script>
+	
+	 
+	<!--PULSE GENERATION-->
+	        <div class="pulse" style="margin-left:550px;margin-top:500px"></div>
+	            <div  id="pulse">
+	                <center><p style="color:white;font-family:sofia;font-weight:bold;font-size:40px;">WELCOME TO WE CARE HOSPITAL</p></center>
+	                <center><p style="font-family:sofia;font-weight:bold;font-size:20px;margin-top:100px;color:white;">OUR SMART SOLUTION MAKE YOUR IDEAS COME TRUE!</p></center>
+		            <center><p style="font-family:sans-serif;font-size:20px;margin-top:10px;">A software development company that supports you in your specific software development requirements. A partner that understands your software development requirements and that will help make your ideas a reality through detailed scoping, practical software development solutions and ongoing maintenance and support.</p></center>
+	                <center><p style="color:white;font-weight:bold;font-family:sofia;font-size:20px;margin-top:100px;">SIMPLE. STUNNING. SMART.</p></center>
+                    <center><p style="font-family:sans-serif;font-size:20px;margin-top:10px;">We focus in delivering excellence and superior client satisfaction through a myriad of technology solutions, uniquely positioned to help clients surpass challenges around running their existing business most efficiently, helping in their legacy transformation, and planning for business expansion and growth through innovative and technical means.</p></center>
+	            </div>
+	    </div>
+	
+	
+	
+	<!--SECOND DIVISION-->
+	<div>
+	    <div id="seconddivision" style="margin-top:30px;">
+	        <center><h1 style="color:white;font-family:sofia;font-weight:bold;font-size:40px;">It's here where we cure people!</h1><br><p style="color:white;font-family:sofia;font-size:20px;">As compared to a multitude of various niche clinics who focus on just one field of healthcare, our medical center offers a full range of professional, agile and affordable medical help for Americans of all ages!</p></center>
+	    </div>
+	 
+	    <div class="row">
+	        <div class="col">
+		        <center>
+				    <img id="img" src="team/staff1.jpg" alt="Staff1z" style="width:70%;border-radius: 70%;">
+		            <p style="font-family:sans-serif;font-size:20px;"><b style="color:white;font-weight:bold;font-family:sofia;font-size:40px;">Our Doctors</b></p><p style="font-family:sans-serif;font-size:20px;color:white;"><br><br>We Care's team of qualified doctors is always ready to help you.</p><br>
+				    <a href="docservices.html" style="color:#ff568c;font-weight:bold;text-decoration:none;font-family:sans-serif;font-size:20px;"><i class="fa fa-long-arrow-right" aria-hidden="true" style="color:#ff568c;font-weight:bold;"></i>Find Doctors</a>
+			    </center> 
+		    </div> 
+		
+		    <div class="col">
+		        <center>
+				    <img id="img" src="images/locate.jpg" alt="Staff1z" style="width:40%;border-radius:100%;">
+		            <p style="font-family:sans-serif;font-size:20px;"><b style="color:white;font-weight:bold;font-family:sofia;font-size:40px;">Location & Directions</b></p><p style="font-family:sans-serif;color:white;font-size:20px;"><br><br>Our clinic is situated downtown and is always available for you.</p><br><br><br><br><br>
+				    <a href="aboutus.html" style="color:#ff568c;font-weight:bold;text-decoration:none;font-family:sans-serif;font-size:20px;"><i class="fa fa-long-arrow-right" aria-hidden="true" style="color:#ff568c;font-weight:bold;"></i>Find Location</a>
+			    </center>
+		    </div>
+		    <div class="col">
+		        <center>
+				    <img id="img" src="images/appoint.jpg" alt="Staff1z" style="width:50%;border-radius: 50%;">
+		            <p style="font-family:sans-serif;font-size:20px;"><b style="color:white;font-weight:bold;font-family:sofia;font-size:40px;">Appointments</b></p><p style="font-family:sans-serif;color:white;font-size:20px;"><br><br>We recommend scheduling an appointment in advance.</p><br><br><br><br>
+		            <a href="signup.html" style="color:#ff568c;font-weight:bold;text-decoration:none;font-family:sans-serif;font-size:20px;"><i class="fa fa-long-arrow-right" aria-hidden="true" style="color:#ff568c;font-weight:bold;"></i>Register &amp; Login For Make An Appointment</a>
+		        </center>
+		    </div>
+	    </div><br><br><br>
+	</div>
+	
+	
+	
+	
+	<!-- THIRD DIVISION-->
+	<div id="thirddivision" class="about" style="background-color:white">
+	        <p class="wordings" style="font-family:sofia;font-size:30px;"><b style="font-weight:bold;font-family:sofia;font-size:40px;color:#009879;">A Few Words About Us</b><br><br><p class="wordings" style="font-family:sofia;font-size:20px;">WE CARE HOSPITAL is a Federally Qualified Health Center providing high-quality healthcare services.
+		    <br><br>We take a multifaceted approach to health care that allows us to provide superior care, across multiple disciplines, to treat the whole person. Our services include family medicine, dentistry, behavioral health, and a full-service pharmacy, all under one roof.
+		    <br><br>WE CARE HOSPITAL is a world class medical center in India pioneering in the field of infertility and cancer care. This hospital has all the facilities needed for a center of excellence and is well equipped with futuristic equipments and we foster a patient centric philosophy among us. The noble aim of the founders of this hospital is to provide the cutting edge technologies evolving around the world in the field of medical science accessible to the common man at affordable rates. Under the leadership of Dr.Kalpana we have a team of expert doctors, dedicated nurses and other medical staff who are always kind, patient, courteous and devoted. We assure the people of Tamilnadu in general and to the people of Madurai in particular that all your problems connected with infertility and cancer care can be tackled in our hospital and fruitful results can be delivered to them by the most experienced and versatile medical professionals who are part of our medical team.</p>
+            <br>
+			<a href="aboutus.html" class="wordings">
+                <button class="btn" style="outline:none;">Learn More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+			</a><br><br><br>	 
+	</div>
+	
+	
+	
+	
+	<!--FOURTH DIVISION-->
+	<div id="fourthdivision">
+	    <center><b style="font-weight:bold;font-family:sofia;color:white;font-size:30px;">OUR ADVANTAGES</b></center><br><br>
+	    <div class="row">
+	        <div class="col">
+		        <center><i class="fa fa-stethoscope fa-5x" aria-hidden="true" style="color:white;size:10px;"></i></center>
+			    <center><p style="font-family:sofia;color:white;font-size:30px;">Qualified Doctors</p><br>
+			    <p style="font-family:sofia;color:white;font-size:20px;">We employ recognized medical specialists from all over the world.</p></center><br><br><br><br>
+		   </div>
+		   <div class="col">
+		        <center><i class="fa fa-hospital-o fa-5x" aria-hidden="true" style="color:white;size:10px;"></i></center>
+			    <center><p style="font-family:sofia;color:white;font-size:30px;">Modern Equipment</p><br>
+			    <p style="font-family:sofia;color:white;font-size:20px;">Our team uses the newest medical equipment and supplies of top quality.</p></center><br><br><br><br>
+		   </div>
+		   <div class="col">
+		        <center><i class="fa fa-ambulance fa-5x" aria-hidden="true" style="color:white;size:10px;"></i></center>
+			    <center><p style="font-family:sofia;color:white;font-size:30px;">Emergency Help</p><br>
+			    <p style="font-family:sofia;color:white;font-size:20px;">Our qualified specialists are always ready to provide any emergency help.</p></center><br><br><br><br>
+		   </div>
+		   <div class="col">
+		       <center><i class="fa fa-user fa-5x" aria-hidden="true" style="color:white;size:10px;"></i></center>
+			   <center><p style="font-family:sofia;color:white;font-size:30px;">Individual Approach</p><br>
+			   <p style="font-family:sofia;color:white;font-size:20px;">Our unique approach allows us to provide tailored medical services.</p></center><br><br><br><br>
+		   </div>
+	    </div>
+	</div>
+	 
+	 
+
+	 
+	 
+	 <!--FIFTH DIVISION-->
+	<div id="fifthdivision" style="background-color:white">
+	    <div class="row">
+            <div class="column">
+	            <div id="container">
+				    <div class="box">
+                        <img id="image" style="margin-top:-30px;margin-left:70px;border-radius:50%;background-color:#009879;width:100px;height:100px;" src="images/1.png" alt="Staff1" style="width:100%">
+					    <center><p style="color:#009879;font-family:sans-serif;font-weight:bold;font-size:30px;">Neurology</p></center><br>
+						<center><p style="color:#009FFD;font-family:sans-serif;font-size:20px;">Neurology is the branch of medicine concerned with the study and treatment of disorders of the nervous system.</p></center>
+					</div>
+				</div>
+		    </div>
+		    <div class="column">
+	            <div id="container">
+				    <div class="box">
+                        <img id="image" style="margin-top:-30px;margin-left:70px;border-radius:50%;background-color:#009879;width:100px;height:100px;" src="images/2.png" alt="Staff1" style="width:100%">
+					    <center><p style="color:#009879;font-family:sans-serif;font-weight:bold;font-size:30px;">Cardiology</p></center><br>
+						<center><p style="color:#009FFD;font-family:sans-serif;font-size:20px;">Cardiology is a medical specialty and a branch of internal medicine concerned with disorders of the heart.</p></center>
+					</div>
+				</div>
+		    </div>
+			<div class="column">
+	            <div id="container">
+				    <div class="box">
+                        <img id="image" style="margin-top:-30px;margin-left:70px;border-radius:50%;background-color:#009879;width:100px;height:100px;" src="images/em.png" alt="Staff1" style="width:100%">
+					    <center><p style="color:#009879;font-family:sans-serif;font-weight:bold;font-size:30px;">Emergency</p></center><br>
+						<center><p style="color:#009FFD;font-family:sans-serif;font-size:20px;">A ward in a hospital that deals with patients who need emergency treatment.</p></center>
+				
+					</div>
+				</div>
+		    </div>
+			<div class="column">
+	            <div id="container">
+				    <div class="box">
+                        <img id="image" style="margin-top:-30px;margin-left:70px;border-radius:50%;background-color:#009879;width:100px;height:100px;" src="images/7.png" alt="Staff1" style="width:100%">
+					    <center><p style="color:#009879;font-family:sans-serif;font-weight:bold;font-size:30px;">Orthopedic</p></center><br>
+						<center><p style="color:#009FFD;font-family:sans-serif;font-size:20px;">Orthopedists handle the disorders, injuries, prevention, treatment, and repair of the skeletal system and its related joints, ligaments, and muscles.</p></center>
+					</div>
+				</div>
+		    </div>
+		</div>
+	</div>
+
+
+	 <!--SIXTH DIVISION-->
+	 <div  style="background-color:white">
+	    <div class="row">
+            <div class="column">
+	            <div id="content">
+                    <img id="img" src="team/4.jpg" alt="Staff1" style="width:100%">
+		        </div>
+		        <center><h1 style="font-family:sofia;color:#009879;font-size:30px;">Dr.Dean Thomas</h1>
+		            <p style="font-family:sans-serif;font-size:20px;color:#009879;">Head of the surgery department</p>
+		        </center>
+            </div>
+            <div class="column">
+	            <div id="content">
+                    <img id="img" src="team/3.jpg" alt="Staff1" style="width:100%">
+		        </div>
+		        <center><h1 style="font-family:sofia;color:#009879;font-size:30px;">Dr.Jerry McStanton</h1>
+		            <p style="font-family:sans-serif;font-size:20px;color:#009879;">Senior surgeon</p>
+		        </center>
+            </div>
+            <div class="column">
+	            <div id="content">
+                    <img id="img" src="team/2.jpg" alt="Staff1" style="width:100%">
+		        </div>
+		        <center><h1 style="font-family:sofia;color:#009879;font-size:30px;">Dr.Lewis Parole</h1>
+		            <p style="font-family:sans-serif;font-size:20px;color:#009879;">Senior surgeon</p>
+		        </center>
+            </div>
+	        <div class="column">
+	            <div id="content">
+                    <img id="img" src="team/1.jpg" alt="Staff1" style="width:100%">
+		        </div>
+		        <center><h1 style="font-family:sofia;color:#009879;font-size:30px;">Dr. Helen B. Taussig</h1>
+		            <p style="font-family:sans-serif;font-size:20px;color:#009879;">Senior surgeon</p>
+		        </center>
+            </div><br>
+        </div>
+	    
+		    <a href="docservices.html">
+                <button class="btn" style="margin-left:560px;outline:none;">View More Details<i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+            </a>
+        <br><br><br>
+	</div>
+	
+	
+	<hr>
+
+
+    <!--SEVENTH DIVISION-->
+	<div class="list">
+	    <div id="row">
+	        <div id="col">
+	            <h4 style="font-weight:bold;">PATIENTS &amp; VISITORS</h4><br>
+	            <a id='link' href="docservices.html"><p>Find a Doctor</p></a><br>
+                <a id='link' href="signup.html"><p>Information for Patients</p></a><br>
+	            <a id='link' href="signin.html"><p>Pay Hospital Bills Online</p></a><br>
+	            <a id='link' href="docservices.html"><p>Services</p></a><br>
+	            <a id='link' href="all.html"><p>Quality Care</p></a><br>
+	            <a id='link' href="all.html"><p>Events</p></a><br>
+	        </div>
+		    <div id="col">
+		        <h4 style="font-weight:bold;">QUICK LINKS</h4><br>
+	            <a id='link' href="home.html"><p>Home</p></a><br>
+	            <a id='link' href="signup.html"><p>Signup</p></a><br>
+	            <a id='link' href="signin.html"><p>Signin</p></a><br>
+	            <a id='link' href="contactus.html"><p>Contact Us</p></a><br>
+	            <a id='link' href="aboutus.html"><p>About Us</p></a><br>
+	            <a id='link' href="gallery.html"><p>Gallery</p></a><br>
+	        </div>
+		    <div id="col">
+	            <h4 style="font-weight:bold;">CONTACT US</h4><br><br>
+	            <a id='link' href="#"><i class="fa fa-map-marker" aria-hidden="true"> No. 56, Tamil Sangam Road, Near S J Infotech, Madurai, Tamil Nadu 625001</i></a><br><br>
+	            <a id='link' href="#"><i class="fa fa-envelope" aria-hidden="true"> ganapathy5subramanian@gmail.com</i></a><br><br>
+		        <a id='link'  href="#"><i class="fa fa-phone" aria-hidden="true"> 6385470031</i></a><br>
+	        </div>
+		    <div id="col">
+	            <h4 style="font-weight:bold;">OTHERS</h4><br>
+	            <a id='link' href="#firstdivision"><p>Go Up</p></a><br>
+	            <a id='link' href="#seconddivision"><p>Few Words About us</p></a><br>
+	            <a id='link' href="#thirddivision"><p>Advantages</p></a><br>
+	            <a id='link' href="#fourthdivision"><p>Few Departments</p></a><br>
+	            <a id='link' href="#fifthdivision"><p>Doctors</p></a><br>
+	            <a id='link' href="all.html"><p>News &amp Events</p></a><br>
+	        </div>
+	    </div>
+	    
+		<hr>
+	    
+		<div id="row">
+	        <div id="col">
+	            <p style="color:white;font-size:15px;font-family:sofia;margin-left:0px;">Blog |Sitemap |XML Sitemap |Privacy |Refund |Policy |Terms & Condition</p>
+	        </div>
+	        <div id="col">
+	            <center>
+				    <p style="color:white;font-size:15px;font-family:sofia;margin-left:0px;">2020 &#169; GlobalHealth. All rights reserved. | Privacy Policy</p>
+				</center>
+	        </div>
+		
+	    
+		<div id="row">
+	        <div id="col">
+			    <a href="all.html" style="color:white;"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+		    </div>	
+	     	<div id="col">
+			    <a href="all.html" style="color:white;"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+		    </div>	
+		    <div id="col">	
+			    <a href="all.html" style="color:white;"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+		    </div>	
+		    <div id="col">	
+			    <a href="all.html" style="color:white;"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+		    </div>
+        </div>	
+        </div>		
+	</div>    
+	</body>
+</html>

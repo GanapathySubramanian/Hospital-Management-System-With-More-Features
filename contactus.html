@@ -1,0 +1,286 @@
+<html>
+<head>
+	<title>Contact us</title>
+	<link rel="shortcut icon" type="image/x-icon" href="images/plus.jpg" />
+	<link rel="stylesheet" href="loader.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/b379d3e204.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="contactus.css">
+	<title>contact us</title>
+	<style>
+	
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	font-family: 'Poppins',sans-serif;
+}
+section{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #009879;
+}
+section::before{
+	content: '';
+	position:absolute;
+	top:0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: #009879;
+}
+section .container{
+	position: relative;
+	min-width: 1100px;
+	min-height: 580px;
+	display: flex;
+	z-index: 1000;
+}
+section .container .float-right{
+		color: #fff;
+		font-size: 15px;
+		text-decoration: none;
+	}
+section .container .contactinfo{
+	position: absolute;
+	top: 40px;
+	width: 350px;
+	height: calc(100% - 80px);
+	background: #0f3959;
+	z-index: 1;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-shadow: 0 20px 20px rgba(0,0,0,0.2);
+    border-radius: 30px;
+}
+section .container .contactinfo h2
+{
+	color: #fff;
+	font-size: 24px;
+	font-weight: 500;
+}
+section .container .contactinfo .info{
+	position: relative;
+	margin: 20px 0;
+}
+section .container .contactinfo ..info li{
+	position:relative;
+	list-style: none;
+	display: flex;
+	margin: 20px 0;
+	cursor: pointer;
+	align-items: flex-start;
+}
+section .container .contactinfo .info li span:nth-child(1){
+	width: 30px;
+	min-width: 30px;
+}
+section .container .contactinfo .info li span:nth-child(1) i{
+	max-width: 100%;
+	filter: invert(1);
+	opacity: 0.5;
+}
+section .container .contactinfo .info li span:nth-child(2){
+	color: #fff;
+	margin-left: 10px;
+	font-weight: 300;
+
+}
+section .container .contactinfo .info li:hover span:nth-child(1) i,
+section .container .contactinfo .info li:hover span:nth-child(2){
+	opacity: 1;
+}
+section .container .contactinfo .sci{
+	position: relative;
+	display: flex;
+	
+}
+section .container .contactinfo .sci li{
+	list-style: none;
+	margin-right: 15px;
+}
+section .container .contactinfo .sci li a{
+	text-decoration: none;
+}
+section .container .contactinfo .sci li a i{
+	filter: invert(1);
+	opacity: 5;
+}
+section .container .contactinfo .sci li:hover a i{
+	opacity: 1;
+}
+section .container .contactform
+{
+	position: absolute;
+	padding: 70px 50px;
+	background: #fff;
+	margin-left: 150px;
+	padding-left: 250px;
+	width: calc(100% - 150px);
+	height: 100%;
+	box-shadow: 0 50px 50px rgba(0,0,0,0.5);
+	border-radius: 30px;
+}
+section .container .contactform h2{
+	color: #0f3959;
+	font-size: 24px;
+	font-weight: 500;
+}
+section .container .contactform .formbox
+{
+	position: relative;	
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-top: 30px;
+}
+section .container .contactform .formbox .inputbox{
+	position: relative;
+	margin: 0 0 35px 0;
+}
+section .container .contactform .formbox .inputbox.w50{
+	width: 47%;
+}
+section .container .contactform .formbox .inputbox.w100{
+	width: 100%;
+}
+section .container .contactform .formbox .inputbox input,
+section .container .contactform .formbox .inputbox textarea{
+	width: 100% !important;
+	padding: 5px 0;
+	resize: none;
+	font-size: 18px;
+	font-weight: 300;
+	color: #333;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+section .container .contactform .formbox .inputbox textarea{
+	min-height: 120px;
+}
+section .container .contactform .formbox .inputbox span{
+	position: absolute;
+	left: 0;
+	padding: 5px 0;
+	font-size: 18px;
+	font-weight: 300;
+	color: #333;
+	transition: 0.3%;
+	pointer-events: none;
+}
+section .container .contactform .formbox .inputbox input:focus ~ span,
+section .container .contactform .formbox .inputbox textarea:focus ~ span,
+section .container .contactform .formbox .inputbox input:valid ~ span,
+section .container .contactform .formbox .inputbox textarea:valid ~ span{
+	transform: translateY(-20px);
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: 1px;
+	color:#ff568c;
+}
+section .container .contactform .formbox .inputbox .submit
+{
+	border-radius: 30px;
+	position: absolute;
+	cursor: pointer;
+	background: #009879;
+	color:#fff;
+	border: none;
+	width: 150px;
+	padding: 12px;
+	outline:none;
+}
+section .container .contactform .formbox .inputbox .submit:hover{
+	background:#ff568c;
+}
+	</style>
+	
+	</head>
+	<body>
+<div class="loader">
+	  <img src="gif/loader.gif" alt="Loading...." />
+	</div>
+	<script src="load.js">
+	</script>
+	<section>
+	<div class="container">
+		<a class="float-right" href="home.html"><h4><i class="fa fa-home" aria-hidden="true">HOME</i></h4></a>
+		<div class="contactinfo" >
+		<div>
+			<h2>Contact Info</h2>
+			<ul class="info" style="font-family:sofia;">
+			<li style="color:#ff568c;">
+				<span style="color:#ff568c;"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+				<span>No. 56, Tamil Sangam Road, Near S J Infotech, Madurai, Tamil Nadu 625001</span>
+			</li><br>
+			<li style="color:#ff568c;">
+				<span style="color:#ff568c;"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+				<span>ganapathy@gmail.com</span>
+			</li><br>
+			<li style="color:#ff568c;">
+				<span style="color:#ff568c;"><i class="fa fa-phone" aria-hidden="true"></i></span>
+				<span>6385470031</span>
+			</li>
+			</ul>
+			</div>
+			<ul class="sci">
+			<li><a href="all.html"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+			<li><a href="all.html"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+			<li><a href="all.html"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+			<li><a href="all.html"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+			</ul>
+			
+		</div>
+		<form action= "mailto:ganapathy5subramanian@gmail.com" method="post" autocomplete="off" enctype="text/plain">
+		<div class="contactform">
+		<h2>Send A Message</h2>
+			<div class="formbox">
+			<div class="inputbox w50">
+				<input type="text" name="firstname" required>
+				<span>First Name</span>
+			</div>
+			<div class="inputbox w50">
+				<input type="text" name="lastname" required>
+				<span>Last Name</span>
+			</div>
+			<div class="inputbox w50">
+				<input type="email" name="email" required>
+				<span>Email Address</span>
+			</div>
+			<div class="inputbox w50">
+				<input type="number" name="number" required>
+				<span>Mobile Number</span>
+			</div>
+			<div class="inputbox w50">
+				<input type="text" name="subject" required>
+				<span>Subject</span>
+			</div>
+			<div class="inputbox w100">
+				<textarea name="message" required></textarea>
+				<span>Write Your Message Here.....</span>
+			</div>
+			<div class="inputbox w50">
+				<button class="submit">Send</button>
+			</div>
+			</div>
+		</div>
+		</form>
+		</div>
+		</section>
+	</body>
+</html>
+
+
+			
