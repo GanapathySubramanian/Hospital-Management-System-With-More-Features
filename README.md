@@ -1,4 +1,4 @@
-# Hospital-Management-System-with-admin-page-using-php-
+# Hospital-Management-System-with-admin-page
 Hospital Management System using MySQL, Php.
 ## Prerequisites
 1. Install XAMPP web server
