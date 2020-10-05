@@ -25,7 +25,7 @@ Hospital Management System using MySQL, Php.
 9. Hurray! That's it!
     
 ### SOFTWARES USED
-  - XAMPP was installed on the Ubuntu 19.04 machine and APACHE2 Server and MySQL were initialized. And, files were built inside opt/lampp/htdocs/myhmsp
+  - XAMPP was installed on the windows 8 machine and APACHE2 Server and MySQL were initialized. And, files were built inside C:\xampp\htdocs\hospital
   - Brackets was used as a text editor.
   - Google Chrome Version 77.0.3865.90 was used to run the project (localhost/myhmsp was used as the url).
   
