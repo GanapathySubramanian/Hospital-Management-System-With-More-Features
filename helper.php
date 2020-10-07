@@ -14,20 +14,10 @@ $result= mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result)>0) {
 
-	echo "<select style='padding: 14px 0;
-	margin: 5px 0;
-	border-left: 0;
-	border-top:0;
-	border-right: 0;
-	border-bottom: 1px solid #999;
-	outline: none; 
-	background: transparent;
-	width:280px;'
-	name='doc'>";
-echo "<option style='width:280px;' disabled selected>--SELECT DOCTORS--</option>";
+	echo "<select style='padding: 14px 0;margin: 5px 0;border-left: 0;border-top:0;border-right: 0;border-bottom: 1px solid #999;outline: none; background: transparent;width:280px;'name='doc'>";
+        echo "<option style='width:280px;' disabled selected>--SELECT DOCTORS--</option>";
 	while ($rows= mysqli_fetch_assoc($result)) {
-		
-		echo "<option style='width:280px;' name='' >".$rows["docid"]."</option>";
+	echo "<option style='width:280px;' value='' >".$rows["docid"]."</option>";
 	}
 	
 	echo "</select>";
