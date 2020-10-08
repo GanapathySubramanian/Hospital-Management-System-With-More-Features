@@ -38,6 +38,6 @@ Hospital Management System using MySQL, Php.
 
 ### Output
 
-###Home Page
+### Home Page
 <p align="center"><img src="https://user-images.githubusercontent.com/60843507/95439325-16023880-0975-11eb-99a5-a2847401ce1b.PNG"></img></p>
 
