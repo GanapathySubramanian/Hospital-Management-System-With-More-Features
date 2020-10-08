@@ -35,7 +35,8 @@ Hospital Management System using MySQL, Php.
   
   
 <p align="center"><img src="https://user-images.githubusercontent.com/36665975/59350977-fcc68900-8d3a-11e9-9450-e5c478497caa.png"></img></p>
+
 #Output
 ##Home
-![1](https://user-images.githubusercontent.com/60843507/95439325-16023880-0975-11eb-99a5-a2847401ce1b.PNG)
+<p align="center"><img src="https://user-images.githubusercontent.com/60843507/95439325-16023880-0975-11eb-99a5-a2847401ce1b.PNG"></img></p>
 
