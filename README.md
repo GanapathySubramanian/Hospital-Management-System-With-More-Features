@@ -17,7 +17,7 @@ Hospital Management System using MySQL, Php.
 1. Download and install XAMPP in your machine
 2. Clone or download the repository
 3. Extract all the files and move it to the 'htdocs' folder of your XAMPP directory and name the folder as 'hospital'.
-4.Then Extract images & gif zip file and the fpdf zip file and take out  all the folder inside the images & gif folder.
+4. After Extracting the downloaded file another zip file that contaion images and gif will have Extract that images & gif zip file and the fpdf zip file and take out  all the folder inside the images & gif folder.
 5. Start the Apache and Mysql in your XAMPP control panel.
 6. Open your web browser and type 'localhost/phpmyadmin'
 7. In phpmyadmin page, create a new database from the left panel and name it as 'hms'
