@@ -6,7 +6,7 @@ if(isset($_POST['search']))
     $valueToSearch = $_POST['valueToSearch'];
     // search in all table columns
     // using concat mysql function
-    $query = "SELECT * FROM `appointment` WHERE CONCAT( `sno`, `userid`, `docid`, `specialization`, `disease`, `appointmentdate`, `appointmenttime`, `consultancyfees`, `userstatus`, `doctorstatus`) LIKE '%".$valueToSearch."%'";
+    $query = "SELECT * FROM `appointment` WHERE userid='$user' AND CONCAT( `sno`, `userid`, `docid`, `specialization`, `disease`, `appointmentdate`, `appointmenttime`, `consultancyfees`, `userstatus`, `doctorstatus`) LIKE '%".$valueToSearch."%'";
     $search_result = filterTable($query);
     
 }
