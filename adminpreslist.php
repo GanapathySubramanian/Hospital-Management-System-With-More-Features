@@ -1,6 +1,6 @@
 <?php
-session_start();
-$userid=$_SESSION['userid'];
+// session_start();
+// $userid=$_SESSION['userid'];
 if(isset($_POST['search']))
 {
     $valueToSearch = $_POST['valueToSearch'];
