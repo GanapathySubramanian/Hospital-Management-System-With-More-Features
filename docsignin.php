@@ -5,7 +5,7 @@ $docid=$_SESSION['docid'];
 <html>
 <head>
 	<title>Doctor Signin</title>
-	<link rel="shortcut icon" type="image/x-icon" href="images/plus.jpg" />
+	<link rel="shortcut icon" type="image/x-icon" href="images/em.jpg" />
 	<link rel="stylesheet" href="loader.css">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<script src="https://kit.fontawesome.com/b379d3e204.js" crossorigin="anonymous"></script>
