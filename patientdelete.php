@@ -28,6 +28,7 @@ function filterTable($query)
 <head>
 <title>Patient Delete</title>
 <link rel="stylesheet" type="text/css" href="home.css">
+	<link rel="shortcut icon" type="image/x-icon" href="images/em.jpg" />
     <link rel="stylesheet" href="loader.css">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <style>
