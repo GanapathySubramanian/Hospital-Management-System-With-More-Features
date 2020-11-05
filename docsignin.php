@@ -22,7 +22,7 @@ $docid=$_SESSION['docid'];
 	header
 		{
 			position: relative;
-			max-width: 870px;
+			max-width: 1200px;
 			margin: 20px auto;
 			padding:10px;
 			background: #fff;
@@ -128,7 +128,26 @@ $docid=$_SESSION['docid'];
      .column{
        flex: 33.33%;
        padding: 25px;
-      }
+      } 
+	  /* notification */
+span#circle {
+  background: #ff568c;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 20px;
+  height:20px;
+  margin-right: 1px;
+  margin-left:-50px;
+  margin-top:20px;
+  text-align: center;
+  width: 20px;
+  position:absolute;
+  left:75%;
+}
 
 	</style>
 	</head>
@@ -152,8 +171,28 @@ $docid=$_SESSION['docid'];
 		<div class="menu-toggle"></div>
 		<nav>
 			<ul>
+			<?php
+			$con=mysqli_connect('localhost','root','');
+             mysqli_select_db($con,'hms');
+            $query = "SELECT COUNT(*) AS count FROM `appointment` WHERE docid='$docid' AND userstatus='1' AND doctorstatus='1' AND action='0'";
+            $query_run= mysqli_query($con,$query);
+            			
+            while($row=mysqli_fetch_assoc($query_run))
+            {
+			$output =$row['count'];
+			if($row['count']>0)
+			{
+			?>
+			<li>
+			<span id="circle"><?php echo $output?></span></li>
+	
+			<?php
+			}
+			}
+			?>
 			<li><a href="docappointment.php">Appointment Details</a></li>
-			<li><a href="docpreslist.php">Prescription List</a></li>
+			
+			<li><a href="docpreslist.php" >Prescription List</a></li>
 			</ul>
 		</nav>
 		<div class="clearfix"></div>
