@@ -23,7 +23,7 @@ $user=$_SESSION['userid'];
 	header
 		{
 			position: relative;
-			max-width: 970px;
+			max-width: 1200px;
 			margin: 20px auto;
 			padding:10px;
 			background: #fff;
@@ -115,6 +115,10 @@ $user=$_SESSION['userid'];
 			{
 				margin: 0;
 			}
+			nav.active ul li span{
+				margin:0;
+				margin-left:90%;
+			}
 		}
 	
 
@@ -128,6 +132,26 @@ $user=$_SESSION['userid'];
 		font-family:sans-serif;
 		color:#009879;
 	  }
+	  /* notification */
+span#circle {
+  background-color:#ff568c;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 20px;
+  height:20px;
+  margin-right: 1px;
+  margin-left:135px;
+margin-top:20px;
+  text-align: center;
+  width: 20px;
+  position:absolute;
+  left:75%;
+}
+
 	</style>
 	</head>
 	<body>
@@ -153,7 +177,27 @@ $user=$_SESSION['userid'];
 			<li><a href="doclist.php">Doctor Lists</a></li>
 			<li><a href="bookappointment.php">Book Appointment</a></li>
 			<li><a href="patappointment.php">Appointment Details</a></li>
-			<li><a href="patpreslist.php">Prescription List</a></li>
+			<li><a href="patpreslist.php" >Prescription List</a></li>
+			<?php
+             $con=mysqli_connect('localhost','root','');
+             mysqli_select_db($con,'hms');
+            $query = "SELECT COUNT(*) AS count FROM `prescription` WHERE userid='$user' AND status='0'";
+            $query_run= mysqli_query($con,$query);
+            			
+            while($row=mysqli_fetch_assoc($query_run))
+            {
+			$output =$row['count'];
+			if($row['count']>0)
+			{
+			?>
+			<li>
+			<span id="circle"><?php echo $output?></span>
+		        </li>
+			<?php
+			}
+			}
+			?>
+			
 			
 			</ul>
 		</nav>
