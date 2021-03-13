@@ -36,6 +36,3 @@ Hospital Management System using MySQL, Php.
   
   
 <p align="center"><img src="https://user-images.githubusercontent.com/36665975/59350977-fcc68900-8d3a-11e9-9450-e5c478497caa.png"></img></p>
-<center>
-The front end will be updated soon wait for the update
-</center>
