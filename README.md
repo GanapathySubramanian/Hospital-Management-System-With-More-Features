@@ -1,7 +1,7 @@
 # Hospital-Management-System-with-admin-page
 Hospital Management System using MySQL, Php.
 
-For the updated version [click here]()
+For the updated version [click here](https://github.com/GanapathySubramanian/Hospital-Mangement-System-Updated-Version)
 ## Prerequisites
 1. Install XAMPP web server
 2. Any Editor (Preferably VS Code or Brackets Text Editor)
